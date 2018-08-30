@@ -11,7 +11,14 @@ const oktaConfig = {
   client_id: process.env.REACT_APP_OKTA_CLIENT_ID
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <BrowserRouter>
+    <Security {...oktaConfig}>
+      <App />
+    </Security>
+  </BrowserRouter>,
+  document.getElementById('root')
+);
 registerServiceWorker();
 
 if (module.hot) module.hot.accept();
