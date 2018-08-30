@@ -9,6 +9,6 @@ import {
 
 export default class LoginButton extends Component {
   render() {
-    return <div />;
+    return <div>TEST</div>;
   }
 }
