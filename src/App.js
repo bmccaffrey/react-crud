@@ -16,8 +16,10 @@ const App = ({ classes }) => (
   <Fragment>
     <CssBaseline />
     <AppHeader />
-    <Home />
+    <main className={classes.main}>
+      <Home />
+    </main>
   </Fragment>
 );
 
-export default App;
+export default withStyles(styles)(App);
