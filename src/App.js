@@ -18,7 +18,7 @@ const App = ({ classes }) => (
     <CssBaseline />
     <AppHeader />
     <main className={classes.main}>
-      <Home />
+      <Route exact path="/" component={Home} />
     </main>
   </Fragment>
 );
