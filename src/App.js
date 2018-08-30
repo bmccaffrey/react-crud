@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react';
+import { CssBaseline, withStyles } from '@material-ui/core';
+import AppHeader from './components/AppHeader';
+import Home from './pages/Home';
 
 class App extends Component {
   render() {
