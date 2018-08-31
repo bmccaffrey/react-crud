@@ -51,6 +51,7 @@ class LoginButton extends Component {
           anchorEl={menuAnchorEl}
           anchorOrigin={menuPosition}
           tranformOrigin={menuPosition}
+          open={!!menuAnchorEl}
         >
           <MenuItem>
             <ListItemText />
