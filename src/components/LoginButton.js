@@ -12,6 +12,12 @@ import {
 import { AccountCircle } from '@material-ui/icons';
 
 export default class LoginButton extends Component {
+  state = {
+    authenticated: null,
+    user: null,
+    menuAnchorEl: null
+  };
+
   render() {
     return (
       <div>
