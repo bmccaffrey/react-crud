@@ -33,6 +33,9 @@ class LoginButton extends Component {
     }
   }
 
+  handleMenuOpen = event =>
+    this.setState({ menuAnchorEl: event.currentTarget });
+
   login = () => this.props.auth.login();
 
   render() {
