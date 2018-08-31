@@ -47,7 +47,11 @@ class LoginButton extends Component {
         <IconButton>
           <AccountCircle />
         </IconButton>
-        <Menu anchorEl={menuAnchorEl} anchorOrigin={menuPosition}>
+        <Menu
+          anchorEl={menuAnchorEl}
+          anchorOrigin={menuPosition}
+          tranformOrigin={menuPosition}
+        >
           <MenuItem>
             <ListItemText />
           </MenuItem>
