@@ -49,7 +49,12 @@ class LoginButton extends Component {
     const { authenticated, user, menuAnchorEl } = this.state;
 
     if (authenticated == null) return null;
-    if (!authenticated) return <Button color="inherit">Login</Button>;
+    if (!authenticated)
+      return (
+        <Button color="inherit" onClick={this.login}>
+          Login
+        </Button>
+      );
 
     const menuPosition = {
       vertical: 'top',
