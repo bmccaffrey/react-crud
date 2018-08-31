@@ -47,6 +47,10 @@ class LoginButton extends Component {
 
   render() {
     const { authenticated, user, menuAnchorEl } = this.state;
+
+    if (authenticated == null) return null;
+    if (!authenticated) return <Button color="inherit">Login</Button>;
+
     const menuPosition = {
       vertical: 'top',
       horizontal: 'right'
