@@ -7,8 +7,6 @@ import {
   ListItemText
 } from '@material-ui/core';
 
-// Can't compile with this import, but I'm following the docs to the letter
-// Looks like it has incorrect peer dependencies
 import { AccountCircle } from '@material-ui/icons';
 
 export default class LoginButton extends Component {
@@ -17,6 +15,14 @@ export default class LoginButton extends Component {
     user: null,
     menuAnchorEl: null
   };
+
+  async checkAuthentication() {
+    const authenticated = await this.props.auth.isAuthenticated();
+    if (authenticated !== this.state.authenticated) {
+      const user = await this.props.auth.getUser();
+      this.setState({ authenticated, user });
+    }
+  }
 
   render() {
     return (
