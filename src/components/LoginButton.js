@@ -36,6 +36,7 @@ class LoginButton extends Component {
   login = () => this.props.auth.login();
 
   render() {
+    const { menuAnchorEl } = this.state;
     const menuPosition = {
       vertical: 'top',
       horizontal: 'right'
