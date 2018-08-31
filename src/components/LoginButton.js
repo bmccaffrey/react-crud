@@ -41,6 +41,11 @@ class LoginButton extends Component {
         <IconButton>
           <AccountCircle />
         </IconButton>
+        <Menu>
+          <MenuItem>
+            <ListItemText />
+          </MenuItem>
+        </Menu>
       </div>
     );
   }
