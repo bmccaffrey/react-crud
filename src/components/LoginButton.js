@@ -36,6 +36,11 @@ class LoginButton extends Component {
   login = () => this.props.auth.login();
 
   render() {
+    const menuPosition = {
+      vertical: 'top',
+      horizontal: 'right'
+    };
+
     return (
       <div>
         <IconButton>
