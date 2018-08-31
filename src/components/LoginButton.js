@@ -13,6 +13,12 @@ import { AccountCircle } from '@material-ui/icons';
 
 export default class LoginButton extends Component {
   render() {
-    return <div>TEST</div>;
+    return (
+      <div>
+        <IconButton>
+          <AccountCircle />
+        </IconButton>
+      </div>
+    );
   }
 }
