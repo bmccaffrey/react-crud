@@ -17,6 +17,14 @@ class LoginButton extends Component {
     menuAnchorEl: null
   };
 
+  componentDidUpdate() {
+    this.checkAuthentication();
+  }
+
+  componentDidMount() {
+    this.checkAuthentication();
+  }
+
   async checkAuthentication() {
     const authenticated = await this.props.auth.isAuthenticated();
     if (authenticated !== this.state.authenticated) {
