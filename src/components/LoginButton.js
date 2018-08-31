@@ -33,6 +33,8 @@ class LoginButton extends Component {
     }
   }
 
+  login = () => this.props.auth.login();
+
   render() {
     return (
       <div>
