@@ -12,8 +12,16 @@ import { compose } from 'recompose';
 import { withRouter } from 'react-router-dom';
 import { Form, Field } from 'react-final-form';
 
-const PostEditor = () => {
-  return <div />;
-};
+const PostEditor = () => (
+  <Form>
+    <Modal>
+      <Card>
+        <form>
+          <CardContent />
+        </form>
+      </Card>
+    </Modal>
+  </Form>
+);
 
 export default PostEditor;
