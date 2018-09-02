@@ -33,6 +33,11 @@ const database = new Sequelize({
   storage: './test.sqlite'
 });
 
+const Post = database.define('posts', {
+  title: Sequelize.STRING,
+  body: Sequelize.TEXT
+});
+
 app.get('/', (req, res) => res.send('Test'));
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'));
