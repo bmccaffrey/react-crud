@@ -25,6 +25,10 @@ const PostEditor = () => (
               {({ input }) => <TextField label="Body" {...input} />}
             </Field>
           </CardContent>
+          <CardActions>
+            <Button>Save</Button>
+            <Button>Cancel</Button>
+          </CardActions>
         </form>
       </Card>
     </Modal>
