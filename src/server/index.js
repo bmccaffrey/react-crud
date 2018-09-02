@@ -40,6 +40,11 @@ const Post = database.define('posts', {
 
 epilogue.initialize({ app, sequelize: database });
 
+epilogue.resource({
+  model: Post,
+  endpoints: ['/posts', '/posts/:id']
+});
+
 app.get('/', (req, res) => res.send('Test'));
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'));
