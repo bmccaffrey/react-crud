@@ -63,7 +63,7 @@ class LoginButton extends Component {
 
     return (
       <div>
-        <IconButton>
+        <IconButton onClick={this.handleMenuOpen}>
           <AccountCircle />
         </IconButton>
         <Menu
@@ -73,7 +73,7 @@ class LoginButton extends Component {
           open={!!menuAnchorEl}
           onClose={this.handleMenuClose}
         >
-          <MenuItem>
+          <MenuItem onClick={this.logout}>
             <ListItemText />
           </MenuItem>
         </Menu>
