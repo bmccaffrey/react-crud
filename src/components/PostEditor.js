@@ -18,8 +18,12 @@ const PostEditor = () => (
       <Card>
         <form>
           <CardContent>
-            <Field name="title" />
-            <Field name="body" />
+            <Field name="title">
+              <TextField />
+            </Field>
+            <Field name="body">
+              <TextField />
+            </Field>
           </CardContent>
         </form>
       </Card>
