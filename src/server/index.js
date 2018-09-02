@@ -45,8 +45,8 @@ epilogue.resource({
   endpoints: ['/posts', '/posts/:id']
 });
 
-app.get('/', (req, res) => res.send('Test'));
+const port = process.env.SERVER_PORT || 3001;
 
 database.sync().then(() => {
-  app.listen(3000, () => console.log('Example app listening on port 3000!'));
+  app.listen(port, () => console.log(`Listening on port ${port}`));
 });
