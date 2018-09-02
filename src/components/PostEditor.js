@@ -17,7 +17,10 @@ const PostEditor = () => (
     <Modal>
       <Card>
         <form>
-          <CardContent />
+          <CardContent>
+            <Field name="title" />
+            <Field name="body" />
+          </CardContent>
         </form>
       </Card>
     </Modal>
