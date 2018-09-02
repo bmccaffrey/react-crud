@@ -10,6 +10,7 @@
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "dotenv": "^6.0.0",
+    "epilogue": "^0.7.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-router-dom": "4.3.1",
