@@ -15,6 +15,18 @@ const oktaJwtVerifier = new OktaJwtVerifier({
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
+app.use(async (req, res, next) => {
+  try {
+    if (!req.headers.authorization)
+      throw new Error('Authorization header is required');
+
+    const accessToken = req.headers.authorization.trim().split(' ')[1];
+    await oktaJwtVerifier.verifyAccessToken(accessToken);
+    next();
+  } catch (error) {
+    next(error.message);
+  }
+});
 
 app.get('/', (req, res) => res.send('Test'));
 
