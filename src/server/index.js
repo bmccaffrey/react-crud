@@ -28,6 +28,11 @@ app.use(async (req, res, next) => {
   }
 });
 
+const database = new Sequelize({
+  dialect: 'sqlite',
+  storage: './test.sqlite'
+});
+
 app.get('/', (req, res) => res.send('Test'));
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'));
