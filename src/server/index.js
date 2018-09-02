@@ -47,4 +47,6 @@ epilogue.resource({
 
 app.get('/', (req, res) => res.send('Test'));
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'));
+database.sync().then(() => {
+  app.listen(3000, () => console.log('Example app listening on port 3000!'));
+});
