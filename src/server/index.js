@@ -10,6 +10,7 @@ const OktaJwtVerifier = require('@okta/jwt-verifier');
 const app = express();
 
 app.use(cors());
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => res.send('Test'));
 
