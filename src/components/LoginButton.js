@@ -74,7 +74,7 @@ class LoginButton extends Component {
           onClose={this.handleMenuClose}
         >
           <MenuItem onClick={this.logout}>
-            <ListItemText />
+            <ListItemText primary="Logout" secondary={user && user.name} />
           </MenuItem>
         </Menu>
       </div>
