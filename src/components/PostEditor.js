@@ -19,10 +19,10 @@ const PostEditor = () => (
         <form>
           <CardContent>
             <Field name="title">
-              <TextField />
+              {({ input }) => <TextField label="Title" autoFocus {...input} />}
             </Field>
             <Field name="body">
-              <TextField />
+              {({ input }) => <TextField label="Body" {...input} />}
             </Field>
           </CardContent>
         </form>
