@@ -7,8 +7,12 @@ const Sequelize = require('sequelize');
 const epilogue = require('epilogue');
 const OktaJwtVerifier = require('@okta/jwt-verifier');
 
-const app = express();
+const oktaJwtVerifier = new OktaJwtVerifier({
+  clientId: process.env.REACT_APP_OKTA_CLIENT_ID,
+  issuer: `${process.env.REACT_APP_OKTA_ORG_URL}/oauth2/default`
+});
 
+const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
