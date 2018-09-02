@@ -63,7 +63,7 @@ class LoginButton extends Component {
 
     return (
       <div>
-        <IconButton onClick={this.handleMenuOpen}>
+        <IconButton onClick={this.handleMenuOpen} color="inherit">
           <AccountCircle />
         </IconButton>
         <Menu
