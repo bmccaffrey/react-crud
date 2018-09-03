@@ -31,17 +31,23 @@ const styles = theme => ({
   }
 });
 
-const PostEditor = ({ post, onSave }) => (
+const PostEditor = ({ classes, post, onSave }) => (
   <Form initialValues={post} onSubmit={onSave}>
-    <Modal>
-      <Card>
+    <Modal className={classes.modal}>
+      <Card className={classes.modalCard}>
         <form>
-          <CardContent>
+          <CardContent className={classes.modalCardContent}>
             <Field name="title">
               {({ input }) => <TextField label="Title" autoFocus {...input} />}
             </Field>
             <Field name="body">
-              {({ input }) => <TextField label="Body" {...input} />}
+              {({ input }) => (
+                <TextField
+                  className={classes.marginTop}
+                  label="Body"
+                  {...input}
+                />
+              )}
             </Field>
           </CardContent>
           <CardActions>
