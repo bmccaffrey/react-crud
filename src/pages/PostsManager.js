@@ -65,6 +65,17 @@ export default class PostsManager extends Component {
     this.setState({ loading: false, posts: await this.fetch('get', '/posts') });
   }
 
+  savePost = async post => {
+    if (post.id) {
+      await this.fetch('put', `/posts/${post.id}`, post);
+    } else {
+      await this.fetch('post', '/posts', post);
+    }
+
+    this.props.history.goBack();
+    this.getPosts();
+  };
+
   render() {
     const { classes } = this.props;
 
