@@ -85,6 +85,19 @@ export default class PostsManager extends Component {
     }
   }
 
+  renderPostEditor = ({
+    match: {
+      params: { id }
+    }
+  }) => {
+    if (this.state.loading) return null;
+    const post = find(this.state.posts, { id: Number(id) });
+
+    if (!post && id !== 'new') return <Redirect to="/posts" />;
+
+    return <PostEditor post={post} onSave={this.savePost} />;
+  };
+
   render() {
     const { classes } = this.props;
 
