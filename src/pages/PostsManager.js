@@ -112,7 +112,13 @@ export default class PostsManager extends Component {
               ['desc', 'asc']
             ).map(post => (
               <ListItem key={post.id}>
-                <ListItemText primary={post.title} />
+                <ListItemText
+                  primary={post.title}
+                  secondary={
+                    post.updatedAt &&
+                    `Updated ${moment(post.updatedAt).fromNow()}`
+                  }
+                />
                 <ListItemSecondaryAction>
                   <IconButton>
                     <DeleteIcon />
