@@ -17,6 +17,8 @@ import moment from 'moment';
 import { find, orderBy } from 'lodash';
 import { compose } from 'recompose';
 
+import PostEditor from '../components/PostEditor';
+
 const styles = theme => ({
   posts: {
     marginTop: 2 * theme.spacing.unit
