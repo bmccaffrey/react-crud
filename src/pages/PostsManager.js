@@ -36,7 +36,7 @@ const styles = theme => ({
 
 const API = process.env.REACT_APP_API || 'http://localhost:3001';
 
-export default class PostsManager extends Component {
+class PostsManager extends Component {
   state = {
     loading: true,
     posts: []
@@ -157,3 +157,9 @@ export default class PostsManager extends Component {
     );
   }
 }
+
+export default compose(
+  withAuth,
+  withRouter,
+  withStyles(styles)
+)(PostsManager);
