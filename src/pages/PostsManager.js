@@ -120,7 +120,10 @@ export default class PostsManager extends Component {
                   }
                 />
                 <ListItemSecondaryAction>
-                  <IconButton>
+                  <IconButton
+                    onClick={() => this.deletePost(post)}
+                    color="inherit"
+                  >
                     <DeleteIcon />
                   </IconButton>
                 </ListItemSecondaryAction>
