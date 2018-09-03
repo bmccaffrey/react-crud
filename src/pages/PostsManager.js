@@ -18,6 +18,11 @@ import { find, orderBy } from 'lodash';
 import { compose } from 'recompose';
 
 export default class PostsManager extends Component {
+  state = {
+    loading: true,
+    posts: []
+  };
+
   render() {
     return <div />;
   }
