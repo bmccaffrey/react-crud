@@ -54,6 +54,9 @@ export default class PostsManager extends Component {
             </ListItem>
           </List>
         </Paper>
+        <Button>
+          <AddIcon />
+        </Button>
       </Fragment>
     );
   }
