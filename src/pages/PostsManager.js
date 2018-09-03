@@ -106,14 +106,20 @@ export default class PostsManager extends Component {
         <Typography variant="display1">Posts Manager</Typography>
         <Paper className={classes.posts} elevation={1}>
           <List>
-            <ListItem>
-              <ListItemText />
-              <ListItemSecondaryAction>
-                <IconButton>
-                  <DeleteIcon />
-                </IconButton>
-              </ListItemSecondaryAction>
-            </ListItem>
+            {orderBy(
+              this.state.posts,
+              ['updatedAt', 'title'],
+              ['desc', 'asc']
+            ).map(post => (
+              <ListItem key={post.id}>
+                <ListItemText primary={post.title} />
+                <ListItemSecondaryAction>
+                  <IconButton>
+                    <DeleteIcon />
+                  </IconButton>
+                </ListItemSecondaryAction>
+              </ListItem>
+            ))}
           </List>
         </Paper>
         <Button className={classes.fab} variant="fab" color="secondary">
