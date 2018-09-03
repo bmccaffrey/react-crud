@@ -33,34 +33,38 @@ const styles = theme => ({
 
 const PostEditor = ({ classes, post, onSave, history }) => (
   <Form initialValues={post} onSubmit={onSave}>
-    <Modal className={classes.modal} onClose={() => history.goBack()} open>
-      <Card className={classes.modalCard}>
-        <form>
-          <CardContent className={classes.modalCardContent}>
-            <Field name="title">
-              {({ input }) => <TextField label="Title" autoFocus {...input} />}
-            </Field>
-            <Field name="body">
-              {({ input }) => (
-                <TextField
-                  className={classes.marginTop}
-                  label="Body"
-                  {...input}
-                />
-              )}
-            </Field>
-          </CardContent>
-          <CardActions>
-            <Button size="small" color="primary" type="submit">
-              Save
-            </Button>
-            <Button size="small" onClick={() => history.goBack()}>
-              Cancel
-            </Button>
-          </CardActions>
-        </form>
-      </Card>
-    </Modal>
+    {({ handleSubmit }) => (
+      <Modal className={classes.modal} onClose={() => history.goBack()} open>
+        <Card className={classes.modalCard}>
+          <form onSumbit={handleSubmit}>
+            <CardContent className={classes.modalCardContent}>
+              <Field name="title">
+                {({ input }) => (
+                  <TextField label="Title" autoFocus {...input} />
+                )}
+              </Field>
+              <Field name="body">
+                {({ input }) => (
+                  <TextField
+                    className={classes.marginTop}
+                    label="Body"
+                    {...input}
+                  />
+                )}
+              </Field>
+            </CardContent>
+            <CardActions>
+              <Button size="small" color="primary" type="submit">
+                Save
+              </Button>
+              <Button size="small" onClick={() => history.goBack()}>
+                Cancel
+              </Button>
+            </CardActions>
+          </form>
+        </Card>
+      </Modal>
+    )}
   </Form>
 );
 
