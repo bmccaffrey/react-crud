@@ -70,4 +70,7 @@ const PostEditor = ({ classes, post, onSave, history }) => (
   </Form>
 );
 
-export default PostEditor;
+export default compose(
+  withRouter,
+  withStyles(styles)
+)(PostEditor);
