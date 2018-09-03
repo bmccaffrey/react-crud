@@ -111,7 +111,12 @@ export default class PostsManager extends Component {
               ['updatedAt', 'title'],
               ['desc', 'asc']
             ).map(post => (
-              <ListItem key={post.id} button component={Link} to={`/posts/${post.id}` >
+              <ListItem
+                key={post.id}
+                button
+                component={Link}
+                to={`/posts/${post.id}`}
+              >
                 <ListItemText
                   primary={post.title}
                   secondary={
@@ -131,7 +136,14 @@ export default class PostsManager extends Component {
             ))}
           </List>
         </Paper>
-        <Button className={classes.fab} variant="fab" color="secondary">
+        <Button
+          className={classes.fab}
+          variant="fab"
+          color="secondary"
+          component={Link}
+          to="/posts/new"
+          aria-label="add"
+        >
           <AddIcon />
         </Button>
         <Route exact path="/posts/:id" render={this.renderPostEditor} />
