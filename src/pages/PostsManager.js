@@ -76,6 +76,13 @@ export default class PostsManager extends Component {
     this.getPosts();
   };
 
+  async deletePost(post) {
+    if (window.confirm(`Are you sure you want to delete "${post.title}"`)) {
+      await this.fetch('delete', `/posts/${post.id}`);
+      this.getPosts();
+    }
+  }
+
   render() {
     const { classes } = this.props;
 
