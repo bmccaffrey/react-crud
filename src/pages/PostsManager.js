@@ -104,38 +104,44 @@ export default class PostsManager extends Component {
     return (
       <Fragment>
         <Typography variant="display1">Posts Manager</Typography>
-        <Paper className={classes.posts} elevation={1}>
-          <List>
-            {orderBy(
-              this.state.posts,
-              ['updatedAt', 'title'],
-              ['desc', 'asc']
-            ).map(post => (
-              <ListItem
-                key={post.id}
-                button
-                component={Link}
-                to={`/posts/${post.id}`}
-              >
-                <ListItemText
-                  primary={post.title}
-                  secondary={
-                    post.updatedAt &&
-                    `Updated ${moment(post.updatedAt).fromNow()}`
-                  }
-                />
-                <ListItemSecondaryAction>
-                  <IconButton
-                    onClick={() => this.deletePost(post)}
-                    color="inherit"
-                  >
-                    <DeleteIcon />
-                  </IconButton>
-                </ListItemSecondaryAction>
-              </ListItem>
-            ))}
-          </List>
-        </Paper>
+        {this.state.posts.length > 0 ? (
+          <Paper className={classes.posts} elevation={1}>
+            <List>
+              {orderBy(
+                this.state.posts,
+                ['updatedAt', 'title'],
+                ['desc', 'asc']
+              ).map(post => (
+                <ListItem
+                  key={post.id}
+                  button
+                  component={Link}
+                  to={`/posts/${post.id}`}
+                >
+                  <ListItemText
+                    primary={post.title}
+                    secondary={
+                      post.updatedAt &&
+                      `Updated ${moment(post.updatedAt).fromNow()}`
+                    }
+                  />
+                  <ListItemSecondaryAction>
+                    <IconButton
+                      onClick={() => this.deletePost(post)}
+                      color="inherit"
+                    >
+                      <DeleteIcon />
+                    </IconButton>
+                  </ListItemSecondaryAction>
+                </ListItem>
+              ))}
+            </List>
+          </Paper>
+        ) : (
+          !this.state.loading && (
+            <Typography variant="subheading">No posts to display</Typography>
+          )
+        )}
         <Button
           className={classes.fab}
           variant="fab"
