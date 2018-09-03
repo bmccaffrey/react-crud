@@ -31,8 +31,8 @@ const styles = theme => ({
   }
 });
 
-const PostEditor = () => (
-  <Form>
+const PostEditor = ({ post, onSave }) => (
+  <Form initialValues={post} onSubmit={onSave}>
     <Modal>
       <Card>
         <form>
