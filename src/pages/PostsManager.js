@@ -24,6 +24,22 @@ export default class PostsManager extends Component {
   };
 
   render() {
-    return <div />;
+    return (
+      <Fragment>
+        <Typography>Posts Manager</Typography>
+        <Paper>
+          <List>
+            <ListItem>
+              <ListItemText />
+              <ListItemSecondaryAction>
+                <IconButton>
+                  <DeleteIcon />
+                </IconButton>
+              </ListItemSecondaryAction>
+            </ListItem>
+          </List>
+        </Paper>
+      </Fragment>
+    );
   }
 }
