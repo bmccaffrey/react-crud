@@ -48,6 +48,8 @@ const PostEditor = ({ classes, post, onSave, history }) => (
                   <TextField
                     className={classes.marginTop}
                     label="Body"
+                    multiline
+                    rows={4}
                     {...input}
                   />
                 )}
