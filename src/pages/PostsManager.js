@@ -111,7 +111,7 @@ export default class PostsManager extends Component {
               ['updatedAt', 'title'],
               ['desc', 'asc']
             ).map(post => (
-              <ListItem key={post.id}>
+              <ListItem key={post.id} button component={Link} to={`/posts/${post.id}` >
                 <ListItemText
                   primary={post.title}
                   secondary={
