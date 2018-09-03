@@ -26,8 +26,10 @@ const PostEditor = () => (
             </Field>
           </CardContent>
           <CardActions>
-            <Button>Save</Button>
-            <Button>Cancel</Button>
+            <Button size="small" color="primary" type="submit">
+              Save
+            </Button>
+            <Button size="small">Cancel</Button>
           </CardActions>
         </form>
       </Card>
