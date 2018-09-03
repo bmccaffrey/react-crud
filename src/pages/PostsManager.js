@@ -103,8 +103,8 @@ export default class PostsManager extends Component {
 
     return (
       <Fragment>
-        <Typography>Posts Manager</Typography>
-        <Paper className={classes.posts}>
+        <Typography variant="display1">Posts Manager</Typography>
+        <Paper className={classes.posts} elevation={1}>
           <List>
             <ListItem>
               <ListItemText />
@@ -116,7 +116,7 @@ export default class PostsManager extends Component {
             </ListItem>
           </List>
         </Paper>
-        <Button className={classes.fab}>
+        <Button className={classes.fab} variant="fab" color="secondary">
           <AddIcon />
         </Button>
       </Fragment>
