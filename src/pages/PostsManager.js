@@ -39,10 +39,12 @@ export default class PostsManager extends Component {
   };
 
   render() {
+    const { classes } = this.props;
+
     return (
       <Fragment>
         <Typography>Posts Manager</Typography>
-        <Paper>
+        <Paper className={classes.posts}>
           <List>
             <ListItem>
               <ListItemText />
@@ -54,7 +56,7 @@ export default class PostsManager extends Component {
             </ListItem>
           </List>
         </Paper>
-        <Button>
+        <Button className={classes.fab}>
           <AddIcon />
         </Button>
       </Fragment>
