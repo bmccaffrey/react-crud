@@ -134,6 +134,7 @@ export default class PostsManager extends Component {
         <Button className={classes.fab} variant="fab" color="secondary">
           <AddIcon />
         </Button>
+        <Route exact path="/posts/:id" render={this.renderPostEditor} />
       </Fragment>
     );
   }
