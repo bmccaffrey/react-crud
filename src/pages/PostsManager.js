@@ -17,6 +17,21 @@ import moment from 'moment';
 import { find, orderBy } from 'lodash';
 import { compose } from 'recompose';
 
+const styles = theme => ({
+  posts: {
+    marginTop: 2 * theme.spacing.unit
+  },
+  fab: {
+    position: 'absolute',
+    bottom: 3 * theme.spacing.unit,
+    right: 3 * theme.spacing.unit,
+    [theme.breakpoints.down('xs')]: {
+      bottom: 2 * theme.spacing.unit,
+      right: 2 * theme.spacing.unit
+    }
+  }
+});
+
 export default class PostsManager extends Component {
   state = {
     loading: true,
