@@ -40,6 +40,10 @@ export default class PostsManager extends Component {
     posts: []
   };
 
+  componentDidMount() {
+    this.getPosts();
+  }
+
   async fetch(method, endpoint, body) {
     try {
       const response = await fetch(`${API}${endpoint}`, {
